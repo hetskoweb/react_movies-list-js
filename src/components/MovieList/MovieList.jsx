@@ -2,8 +2,6 @@ import './MovieList.scss';
 
 import { MovieCard } from '../MovieCard';
 
-import moviesFromServer from '../../api/movies.json';
-
 export const MovieList = ({ movies }) => {
   if (!movies.length) {
     return null;
@@ -11,7 +9,7 @@ export const MovieList = ({ movies }) => {
 
   return (
     <div className="movies">
-      {moviesFromServer.map(movie => (
+      {movies.map(movie => (
         <MovieCard movie={movie} key={movie.imdbId} />
       ))}
     </div>
